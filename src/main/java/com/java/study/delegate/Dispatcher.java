@@ -1,0 +1,20 @@
+package com.java.study.delegate;
+
+/**
+ * create by Nemo
+ * 2018/7/22  22:16
+ */
+public class Dispatcher implements IExector {
+
+    IExector exector;
+    public Dispatcher(IExector exector) {
+        this.exector=exector;
+    }
+
+    // 项目经理，虽然也有执行方法
+    // 但是他的工作职责是不一样的
+    @Override
+    public void doing() {
+        this.exector.doing();
+    }
+}
